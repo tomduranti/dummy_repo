@@ -1,0 +1,10 @@
+@use "../abstract/_vars";
+
+.page_wrapper {
+    background-color: vars.$cream;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

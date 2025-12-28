@@ -1,0 +1,63 @@
+@use "../abstract/_vars";
+@use "sass:map";
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    background-color: vars.$white;
+
+    &__img {
+        width: 100%;
+        height: 342px;
+        max-width: 350px;
+        object-fit: cover;
+    }
+
+    &__text {
+        padding: map.get(vars.$spacing, 400);
+
+        &>:not(:last-child) {
+            margin-bottom: map.get(vars.$spacing, 300);
+        }
+
+        .card__product_category {
+            text-transform: uppercase;
+        }
+
+        .card__product_name {
+            color: vars.$black;
+        }
+    }
+
+    &__price {
+        display: flex;
+        align-items: center;
+
+        .card__current_price {
+            color: map.get(vars.$green, 500);
+            margin-right: map.get(vars.$spacing, 200);
+        }
+
+        .card__original_price {
+            color: vars.$grey;
+            text-decoration: line-through;
+        }
+    }
+}
+
+/* BREAKPOINTS */
+@media screen and (min-width: 768px) {
+    .card {
+        flex-direction: row;
+        max-width: 600px;
+
+        &__img {
+            height: auto;
+        }
+    }
+}
