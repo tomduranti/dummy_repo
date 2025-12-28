@@ -1,4 +1,4 @@
-@use "../abstract/_vars";
+@use "../abstract/vars";
 @use "sass:map";
 
 .btn {
@@ -15,7 +15,7 @@
     }
 
     &__svg {
-        margin-right: map.get(vars.$spacing, 100);
+        margin-inline-end: map.get(vars.$spacing, 100);
     }
 
     &:hover {
