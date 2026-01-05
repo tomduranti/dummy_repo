@@ -1,0 +1,96 @@
+@use "sass:map";
+
+/* COLOR */
+$blue: #549EF2;
+$cyan: #44D3D2;
+$light_cyan: #83A6D2;
+$grey: (
+    400: #6A7178,
+    500: #4D4F62
+);
+$orange: #FCAE4A;
+$red: #EA5454;
+$white: #FFFFFF;
+
+/* TYPOGRAPHY */
+$font_family: "Poppins", serif;
+
+$fw: (
+    "extra_light": 200,
+    "regular": 400,
+    "semi_bold": 600,
+);
+
+$fs: (
+    13: 0.8125rem,
+    15: 0.938rem,
+    20: 1.25rem,
+    36: 2.25rem,
+);
+
+$spacing: (
+    0:    0,
+    25:   0.125em,    // 2px
+    50:   0.25em,     // 4px
+    75:   0.375em,    // 6px
+    100:  0.5em,      // 8px
+    125:  0.625em,    // 10px
+    150:  0.75em,     // 12px
+    200:  1em,        // 16px
+    250:  1.25em,
+    300:  1.5em,      // 24px
+    375:  1.875em,    // 30px
+    400:  2em,        // 32px
+    500:  2.5em,      // 40px
+    600:  3em,
+    650:  3.5em,      // 56px
+    675:  3.75em,     // 60px
+    800:  4em,        // 64px
+    825:  4.625em,    // 74px
+    1000: 5em,
+    2000: 10.188em    // 163px
+);
+
+/* UTILS */
+.text_preset_1 {
+    font-family: $font_family;
+    font-weight: map.get($fw, "semi_bold");
+    font-size: map.get($fs, 24);
+    line-height: 140%;
+    letter-spacing: 0.016em;
+    color: map.get($grey, 500);
+}
+
+.text_preset_2 {
+    font-family: $font_family;
+    font-weight: map.get($fw, "extra_light");
+    font-size: map.get($fs, 24);
+    line-height: 140%;
+    letter-spacing: 0.016em;
+    color: map.get($grey, 500);
+}
+
+.text_preset_3 {
+    font-family: $font_family;
+    font-weight: map.get($fw, "semi_bold");
+    font-size: map.get($fs, 20);
+    line-height: 135%;
+    color: map.get($grey, 500);
+}
+
+.text_preset_4 {
+    font-family: $font_family;
+    font-weight: map.get($fw, "regular");
+    font-size: map.get($fs, 15);
+    line-height: 140%;
+    letter-spacing: 0.001em;
+    color: map.get($grey, 500);
+}
+
+.text_preset_5 {
+    font-family: $font_family;
+    font-weight: map.get($fw, "regular");
+    font-size: map.get($fs, 13);
+    line-height: 160%;
+    color: map.get($grey, 500);
+}

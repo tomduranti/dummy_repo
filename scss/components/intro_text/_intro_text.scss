@@ -1,0 +1,23 @@
+@use "../../abstract/_vars";
+@use "sass:map";
+
+.intro_text {
+    text-align: center;
+    margin: map.get(vars.$spacing, 650) auto map.get(vars.$spacing, 675);
+
+    .intro_text__addition {
+        margin-bottom: map.get(vars.$spacing, 200);
+    }
+}
+
+@media screen and (min-width: 48em) {
+    .intro_text {
+        max-width: 33.75em;
+        margin: map.get(vars.$spacing, 825) auto map.get(vars.$spacing, 1000);
+    }
+
+    .text_preset_2,
+    .text_preset_1 {
+        font-size: map.get(vars.$fs, 36);
+    }
+}
