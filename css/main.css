@@ -287,20 +287,20 @@ body {
   min-height: 374px;
   position: relative;
   background-color: #4D96A9;
-  background-image: url("../../assets/mobile/footer.jpg");
+  background-image: url("../assets/mobile/footer.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 @media screen and (min-width: 48rem) {
   .footer__bg {
-    background-image: url("../../assets/tablet/footer.jpg");
+    background-image: url("../assets/tablet/footer.jpg");
     min-height: 320px;
   }
 }
 @media screen and (min-width: 90rem) {
   .footer__bg {
-    background-image: url("../../assets/desktop/footer.jpg");
+    background-image: url("../assets/desktop/footer.jpg");
     min-height: 312px;
   }
 }
@@ -403,4 +403,5 @@ body {
   .button--purple_600 {
     align-self: flex-start;
   }
+
 }
