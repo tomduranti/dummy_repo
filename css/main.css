@@ -224,7 +224,7 @@ body {
 
 @media screen and (min-width: 48rem) {
   .hero {
-    margin-block-end: 8.939rem;
+    margin-block-end: 8.938rem;
   }
   .hero__text {
     margin: 0 auto;
@@ -251,6 +251,7 @@ body {
 @media screen and (min-width: 90rem) {
   .grid {
     grid-template-columns: repeat(auto-fit, 16rem);
+    height: 256px;
     gap: 2rem;
   }
 }
@@ -275,6 +276,11 @@ body {
 
 .showcase {
   margin-block-end: 4rem;
+}
+@media screen and (min-width: 90rem) {
+  .showcase {
+    margin-block-end: 4.5rem;
+  }
 }
 .showcase__intro {
   text-transform: uppercase;
