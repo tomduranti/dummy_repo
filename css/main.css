@@ -293,7 +293,7 @@ body {
 }
 
 .footer__bg {
-  min-height: 45.224vh;
+  min-height: 374px;
   position: relative;
   background-color: #4D96A9;
   background-image: url("../assets/mobile/footer.jpg");
@@ -304,13 +304,13 @@ body {
 @media screen and (min-width: 48rem) {
   .footer__bg {
     background-image: url("../assets/tablet/footer.jpg");
-    min-height: 38.8vh;
+    min-height: 320px;
   }
 }
 @media screen and (min-width: 90rem) {
   .footer__bg {
     background-image: url("../assets/desktop/footer.jpg");
-    min-height: 31.2vh;
+    min-height: 312px;
   }
 }
 .footer__bg::after {
