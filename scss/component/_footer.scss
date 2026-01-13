@@ -9,18 +9,18 @@
         min-height: 374px;
         position: relative;
         background-color: map.get(c.$cyan, 600);
-        background-image: url("../../assets/mobile/footer.jpg");
+        background-image: url("../assets/mobile/footer.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
 
         @media screen and (min-width: map.get(v.$breakpoint, tablet)) {
-            background-image: url("../../assets/tablet/footer.jpg");
+            background-image: url("../assets/tablet/footer.jpg");
             min-height: 320px;
         }
 
         @media screen and (min-width: map.get(v.$breakpoint, l_desktop)) {
-            background-image: url("../../assets/desktop/footer.jpg");
+            background-image: url("../assets/desktop/footer.jpg");
             min-height: 312px;
         }
 
@@ -72,4 +72,5 @@
             max-inline-size: 16rem;
         }
     }
+
 }
