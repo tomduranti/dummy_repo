@@ -76,6 +76,7 @@ body {
   display: none;
   @media screen and (min-width: map.get(v.$breakpoint, l_desktop)) {
       display: inline-block;
+      @include m.spacing(margin-block-end, 0);
   }
 }
 
