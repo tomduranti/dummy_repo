@@ -33,7 +33,7 @@
 
 .text_preset_5 {
   font-family: "Red Hat Display", sans-serif;
-  font-size: 16;
+  font-size: 1rem;
   font-weight: 900;
   line-height: 150%;
   letter-spacing: 0;
@@ -71,7 +71,6 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-smooth: always;
 }
 
 .container--text_2, .container--text, .container--section, .container--hero {
@@ -176,6 +175,11 @@ body {
   align-content: center;
   margin-block-end: 4rem;
 }
+@media screen and (min-width: 90rem) {
+  .header {
+    margin-block-end: 5.438rem;
+  }
+}
 
 .logo {
   margin-block-start: 3rem;
@@ -225,10 +229,6 @@ body {
     max-inline-size: inherit;
   }
 }
-.showcase {
-  margin-block-end: 4rem;
-}
-
 .grid {
   display: grid;
   justify-content: center;
@@ -267,6 +267,9 @@ body {
   border-radius: 0.625rem;
 }
 
+.showcase {
+  margin-block-end: 4rem;
+}
 .showcase__intro {
   text-transform: uppercase;
   color: #4D96A9;
@@ -284,7 +287,7 @@ body {
 }
 
 .footer__bg {
-  min-height: 374px;
+  min-height: 45.224vh;
   position: relative;
   background-color: #4D96A9;
   background-image: url("../assets/mobile/footer.jpg");
@@ -295,13 +298,13 @@ body {
 @media screen and (min-width: 48rem) {
   .footer__bg {
     background-image: url("../assets/tablet/footer.jpg");
-    min-height: 320px;
+    min-height: 38.8vh;
   }
 }
 @media screen and (min-width: 90rem) {
   .footer__bg {
     background-image: url("../assets/desktop/footer.jpg");
-    min-height: 312px;
+    min-height: 31.2vh;
   }
 }
 .footer__bg::after {
@@ -403,5 +406,4 @@ body {
   .button--purple_600 {
     align-self: flex-start;
   }
-
 }

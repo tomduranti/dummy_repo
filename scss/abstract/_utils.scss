@@ -7,7 +7,7 @@
 %text_preset_2 { @include m.text_preset(t.$font_family, clamp(2rem, 1.83rem + 0.75vw, 2.5rem), "black", 110%); }
 .text_preset_3 { @include m.text_preset(t.$font_family, clamp(0.75rem, 0.66rem + 0.37vw, 1rem), "black", 110%, .25rem); }
 %text_preset_4 { @include m.text_preset(t.$font_family, clamp(1rem, 0.96rem + 0.19vw, 1.13rem), "medium", 140%); }
-.text_preset_5 { @include m.text_preset(t.$font_family, 16, "black", 150%); }
+.text_preset_5 { @include m.text_preset(t.$font_family, 1rem, "black", 150%); }
 
 .text_preset_2--dark_blue {
     @extend %text_preset_2;

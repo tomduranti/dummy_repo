@@ -3,10 +3,6 @@
 @use "../abstract/vars" as v;
 @use "sass:map";
 
-.showcase {
-    @include m.spacing(margin-block-end, 800);
-}
-
 .grid {
     display: grid;
     justify-content: center;
@@ -52,6 +48,7 @@
 }
 
 .showcase {
+    @include m.spacing(margin-block-end, 800);
 
     &__intro {
         text-transform: uppercase;
