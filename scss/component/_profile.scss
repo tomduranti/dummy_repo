@@ -1,4 +1,6 @@
+@use "../abstract/color" as c;
 @use "../abstract/mixins" as m;
+@use "sass:map";
 
 .profile {
 
@@ -13,36 +15,21 @@
         border-radius: 50%;
         position: relative;
         overflow: hidden;
-        transition: transform .3s ease;
-
-        @media (prefers-reduced-motion: no-preference) {
-            transition: transform .3s ease;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            transition: none;
-        }
+        @include m.transition(transform .3s ease);
 
         &::after {
             content: '';
             position: absolute;
             inset: 0;
+
             inline-size: 2.5em;
             block-size: 2.5em;
             background: linear-gradient(0deg,
                     transparent,
                     transparent 30%,
-                    rgba(236, 242, 248, .3));
+                    map.get(c.$grey, 700));
             transform: rotate(-45deg);
-            transition: all .5s ease;
-
-            @media (prefers-reduced-motion: no-preference) {
-                transition: all .5s ease;
-            }
-
-            @media (prefers-reduced-motion: reduce) {
-                transition: none;
-            }
+            @include m.transition(all .5s ease);
             opacity: 0;
         }
 
@@ -52,18 +39,20 @@
         }
     }
 
-    .icon_share {
-        @media screen and (min-width: 48rem) {
-            margin: .25rem .313rem .25rem 0;
-        }
-    }
-
     &__name_and_date {
         display: flex;
         flex-direction: column;
     }
 }
 
-.profile--is_hidden {
-    opacity: 0;
+#icon_share {
+    @include m.transition(transform .2s ease);
+
+    @media screen and (min-width: 48rem) {
+        margin: .25rem .313rem .25rem 0;
+    }
+
+    &:focus-visible {
+        transform: scale(1.1);
+    }
 }
