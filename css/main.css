@@ -6,6 +6,11 @@
   letter-spacing: 0;
   color: #36384D;
 }
+@media screen and (min-width: 48rem) {
+  .text_preset_1 {
+    font-size: 3.5rem;
+  }
+}
 
 .text_preset_2, .text_preset_2--bold {
   font-family: "Roboto", sans-serif;
@@ -23,12 +28,6 @@
   line-height: 1.5;
   letter-spacing: 0;
   color: #36384D;
-}
-
-@media screen and (min-width: 48rem) {
-  .text_preset_1 {
-    font-size: 3.5rem;
-  }
 }
 
 .text_preset_2--bold {
@@ -138,7 +137,7 @@ body {
     margin-block-end: 1rem;
   }
 }
-.form #error {
+.form .error {
   color: #FF6155;
 }
 .form .email_label {
