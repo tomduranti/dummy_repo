@@ -1,10 +1,12 @@
-let JSONDataset;
+export let JSONDataset;
 
 export async function getDataFromJSON() {
     await fetch('js/data.json')
         .then(response => {
             if (response.ok) {
                 return response.json();
+            } else {
+                throw new Error(response.status);
             }
         })
         .then(data => {
@@ -13,6 +15,13 @@ export async function getDataFromJSON() {
         .catch(error => {
             console.error(error);
         })
+}
+
+export function isArray(dataset) {
+    if (!Array.isArray(dataset)) {
+        console.warn("Internal error: JSONDataset is not available or invalid");
+        return;
+    }
 }
 
 export function setDataToHTML(HTMLElement, cachedObject) {
@@ -24,7 +33,6 @@ export function setDataToHTML(HTMLElement, cachedObject) {
         cachedObjectTitle.previousHours.textContent = setPreviousTimeframe(HTMLElement.dataset.timeframe);
         cachedObjectTitle.timeframe.textContent = pluralizeWord(obj.timeframes[HTMLElement.dataset.timeframe].previous);
     }
-
 }
 
 function pluralizeWord(hour) {

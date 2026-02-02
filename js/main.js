@@ -1,4 +1,4 @@
-import { getDataFromJSON, setDataToHTML } from "./functions.js";
+import { getDataFromJSON, setDataToHTML, isArray, JSONDataset } from "./functions.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     })
 
     await getDataFromJSON();
+    isArray(JSONDataset);
 
     //default state on page load
     defaultStateOnLoad.classList.add("focus_visible"); //disable :focus-visible ring on initial page load
