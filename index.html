@@ -5,77 +5,133 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/reset_min.css">
         <link rel="stylesheet" href="css/main_min.css">
-        <script src="main.js"></script>
-        <title>Newsletter sign-up with success message</title>
-        <link rel="shortcut icon" href="images/favicon_sdm.ico">
+        <script src="js/main.js" type="module"></script>
+        <title>Time tracking dashboard</title>
         <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     </head>
 
     <body>
-        <main class="page_wrapper">
-            <!-- Form page -->
-            <article class="newsletter" id="newsletter_page">
-                <picture class="newsletter__img">
-                    <source srcset="assets/illustration_sign_up_desktop.svg" media="(min-width: 90rem)">
-                    <source srcset="assets/illustration_sign_up_tablet.svg" media="(min-width: 48rem)">
-                    <img src="assets/illustration_sign_up_mobile.svg" alt="sign up image">
-                </picture>
-                <div class="newsletter__content">
-                    <div class="container--newsletter">
-                        <div class="newsletter__text">
-                            <h1 class="newsletter__heading text_preset_1">Stay updated!</h1>
-                            <h2 class="newsletter__subheading text_preset_2">Join 60,000+ product managers receiving monthly
-                                updates on:</h2>
-                            <ul class="benefit_list">
-                                <li class="benefit_list__item">
-                                    <img src="assets/icon_list.svg" alt="">
-                                    <span class="benefit_list__benefit text_preset_2">Product discovery and building what
-                                        matters</span>
-                                </li>
-                                <li class="benefit_list__item">
-                                    <img src="assets/icon_list.svg" alt="">
-                                    <span class="benefit_list__benefit text_preset_2">Measuring to ensure updates are a
-                                        success</span>
-                                </li>
-                                <li class="benefit_list__item">
-                                    <img src="assets/icon_list.svg" alt="">
-                                    <span class="benefit_list__benefit text_preset_2">And much more!</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <form class="form" id="form" novalidate>
-                            <div class="email_label">
-                                <label class="text_preset_3" for="email">Email address</label>
-                                <span class="error is_hidden text_preset_3" id="error" aria-live="polite">Valid email required</span>
-                            </div>
-                            <input class="form__email text_preset_2" type="email" id="email" name="mail"
-                                placeholder="email@company.com" required aria-describedby="" aria-invalid="false">
-                            <button class="button--submit text_preset_2--bold" type="submit" id="submit">Subscribe to monthly
-                                newsletter</button>
-                        </form>
-                    </div>
-                </div>
-            </article>
+        <div class="page_wrapper">
+            <main>
+                <div class="grid">
 
-            <!-- Success page -->
-             <section class="success_page is_hidden" id="success_page" aria-live="polite" aria-atomic="true">
-                <div class="container--success">
-                    <div class="success_page__text">
-                        <div class="success_page__img">
-                            <img src="assets/icon_success.svg" alt="">
+                    <div class="report_summary">
+                        <div class="report_summary__avatar_info">
+                            <img class="report_summary__avatar_img" src="assets/avatar_jeremy.png" alt="avatar image">
+                            <div class="report_summary__avatar_details">
+                                <span class="text_preset_6">Report for</span>
+                                <h2 class="avatar_name text_preset_4" id="avatar_name">Jeremy Robson</h2>
+                            </div>
                         </div>
-                        <h2 class="success_page__heading text_preset_1">Thanks for subscribing!</h2>
-                        <p class="text_preset_2">A confirmation email has been sent to <span class="text_preset_2--bold" id="success_email"></span>. Please open it and click the button inside to confirm your subscription</p>
+                        <div class="report_summary__time_range">
+                            <button class="period_selectors text_preset_5--regular" aria-pressed="false"
+                                aria-label="Show daily statistics" data-timeframe="daily">Daily</button>
+                            <button class="period_selectors text_preset_5--regular" aria-pressed="false"
+                                aria-label="Show daily statistics" id="default_data_onload"
+                                data-timeframe="weekly">Weekly</button>
+                            <button class="period_selectors text_preset_5--regular" aria-pressed="false"
+                                aria-label="Show daily statistics" data-timeframe="monthly">Monthly</button>
+                        </div>
                     </div>
-                    <button class="button--submit text_preset_2--bold" id="dismiss" type="button">Dismiss message</button>
+
+                    <div class="work item" data-activity="work">
+                        <div class="item__container">
+                            <div class="item__header">
+                                <h3 class="text_preset_5--medium">Work</h3>
+                                <img src="assets/icon_ellipsis.svg" alt="ellipsis icon">
+                            </div>
+                            <div class="item__body">
+                                <span class="current_hours text_preset_3"></span>
+                                <span class="text_preset_6">
+                                    <span class="previous_events"></span> - <span class="previous_hours"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="play item" data-activity="play">
+                        <div class="item__container">
+                            <div class="item__header">
+                                <h3 class="text_preset_5--medium">Play</h3>
+                                <img src="assets/icon_ellipsis.svg" alt="ellipsis icon">
+                            </div>
+                            <div class="item__body">
+                                <span class="current_hours text_preset_3"></span>
+                                <span class="text_preset_6">
+                                    <span class="previous_events"></span> - <span class="previous_hours"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="study item" data-activity="study">
+                        <div class="item__container">
+                            <div class="item__header">
+                                <h3 class="text_preset_5--medium">Study</h3>
+                                <img src="assets/icon_ellipsis.svg" alt="ellipsis icon">
+                            </div>
+                            <div class="item__body">
+                                <span class="current_hours text_preset_3"></span>
+                                <span class="text_preset_6">
+                                    <span class="previous_events"></span> - <span class="previous_hours"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="exercise item" data-activity="exercise">
+                        <div class="item__container">
+                            <div class="item__header">
+                                <h3 class="text_preset_5--medium">Exercise</h3>
+                                <img src="assets/icon_ellipsis.svg" alt="ellipsis icon">
+                            </div>
+                            <div class="item__body">
+                                <span class="current_hours text_preset_3"></span>
+                                <span class="text_preset_6">
+                                    <span class="previous_events"></span> - <span class="previous_hours"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social item" data-activity="social">
+                        <div class="item__container">
+                            <div class="item__header">
+                                <h3 class="text_preset_5--medium">Social</h3>
+                                <img src="assets/icon_ellipsis.svg" alt="ellipsis icon">
+                            </div>
+                            <div class="item__body">
+                                <span class="current_hours text_preset_3"></span>
+                                <span class="text_preset_6">
+                                    <span class="previous_events"></span> - <span class="previous_hours"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="self_care item" data-activity="self care">
+                        <div class="item__container">
+                            <div class="item__header">
+                                <h3 class="text_preset_5--medium">Self Care</h3>
+                                <img src="assets/icon_ellipsis.svg" alt="ellipsis icon">
+                            </div>
+                            <div class="item__body">
+                                <span class="current_hours text_preset_3"></span>
+                                <span class="text_preset_6">
+                                    <span class="previous_events"></span> - <span class="previous_hours"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-             </section>
-        </main>
+            </main>
+        </div>
     </body>
 
 </html>

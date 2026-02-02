@@ -1,0 +1,45 @@
+let JSONDataset;
+
+export async function getDataFromJSON() {
+    await fetch('js/data.json')
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then(data => {
+            JSONDataset = data;
+        })
+        .catch(error => {
+            console.error(error);
+        })
+}
+
+export function setDataToHTML(HTMLElement, cachedObject) {
+
+    for (const obj of JSONDataset) {
+        const cachedObjectTitle = cachedObject[obj.title.toLowerCase()];
+        
+        cachedObjectTitle.currentHours.textContent = pluralizeWord(obj.timeframes[HTMLElement.dataset.timeframe].current);
+        cachedObjectTitle.previousHours.textContent = setPreviousTimeframe(HTMLElement.dataset.timeframe);
+        cachedObjectTitle.timeframe.textContent = pluralizeWord(obj.timeframes[HTMLElement.dataset.timeframe].previous);
+    }
+
+}
+
+function pluralizeWord(hour) {
+    let time;
+    hour <= 1 ? time = "hr" : time = "hrs";
+
+    return hour + time;
+}
+
+function setPreviousTimeframe(timeframe) {
+    const previousTimeframeNames = {
+        daily: "Yesterday",
+        weekly: "Last Week",
+        monthly: "Last Month",
+    }
+
+    return previousTimeframeNames[timeframe];
+}
